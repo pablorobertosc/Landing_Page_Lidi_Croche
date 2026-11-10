@@ -40,7 +40,7 @@ function mostrar() {
         .filter(p => (categoria == 'todos' || p.c == categoria) && norm(`${p.n} ${p.c} ${p.d}`).includes(termo))
         .map(p => `
             <a class="card" target="_blank" rel="noopener" href="${zap('Olá! Gostaria de consultar o preço do ' + p.n + '.')}">
-                <div class="foto"><img src="img/${p.id}.jpg" alt="${p.n}" loading="lazy"></div>
+                <div class="foto"><img src="${p.id}.jpg" alt="${p.n}" loading="lazy"></div>
                 <h3>${p.n}</h3>
                 <p>${p.d}</p>
                 <p>${p.m}</p>
