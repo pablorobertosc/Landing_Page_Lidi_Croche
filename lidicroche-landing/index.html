@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="LidiCrochê: jogos de banheiro, tapetes e mesa posta em crochê, feitos à mão sob encomenda.">
+    <title>LidiCrochê – Crochê artesanal sob encomenda</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Cabeçalho fixo com links para as seções da página -->
+    <header class="hd">
+        <a class="logo" href="#topo">LidiCrochê.</a>
+        <nav class="nav" aria-label="Menu">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#diario">Diário</a>
+            <a href="#sobre">Sobre</a>
+            <a class="btn" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+        </nav>
+    </header>
+
+    <main id="topo">
+        <!-- 1. Banner principal -->
+        <section class="hero">
+            <img src="img/1.jpg" alt="Jogo de banheiro em crochê">
+            <div>
+                <h1>Crochê feito à mão, com carinho</h1>
+                <p>Jogos de banheiro, tapetes e mesa posta sob encomenda, nas cores e medidas da sua casa.</p>
+                <a class="btn" href="#catalogo">Ver catálogo</a>
+                <a class="btn" data-wa href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            </div>
+        </section>
+
+        <!-- 2. Catálogo: os cartões são criados pelo script.js -->
+        <section id="catalogo" class="bloco">
+            <h2>Catálogo</h2>
+            <p>Toque na peça para consultar o preço no WhatsApp.</p>
+            <div class="filtros">
+                <button data-cat="todos" class="on">Tudo</button>
+                <button data-cat="banheiro">Banheiro</button>
+                <button data-cat="tapete">Tapetes</button>
+                <button data-cat="mesa">Mesa posta</button>
+                <input id="busca" type="search" placeholder="Buscar peça" aria-label="Buscar peça">
+            </div>
+            <div id="lista" class="grade" aria-live="polite"></div>
+        </section>
+
+        <!-- 3. Diário: dicas de cuidado e decoração -->
+        <section id="diario" class="bloco">
+            <h2>Diário</h2>
+            <p>Dicas de cuidado e decoração para suas peças durarem muito.</p>
+            <div class="posts">
+                <article>
+                    <div class="foto"><img src="img/11.jpg" alt="" loading="lazy"></div>
+                    <small>Cuidados</small>
+                    <h3>Como lavar tapetes de crochê sem perder a forma</h3>
+                    <p>O algodão resiste bem à lavagem, mas pede delicadeza. Lave à mão ou na máquina em ciclo delicado, com água fria ou morna e sabão neutro. Use um saco de lavagem para proteger as pontas.</p>
+                    <p>Evite alvejante e excesso de amaciante: eles ressecam a fibra e podem desbotar as cores. Não torça a peça, apenas pressione de leve para tirar o excesso de água.</p>
+                </article>
+                <article>
+                    <div class="foto"><img src="img/8.jpg" alt="" loading="lazy"></div>
+                    <small>Decoração</small>
+                    <h3>Mesa posta com crochê: como combinar as cores</h3>
+                    <p>Sousplat, caminho e porta-guardanapo na mesma cor deixam a mesa harmônica. Tons escuros com detalhes dourados combinam com jantares, e cores claras com flores combinam com almoços e cafés.</p>
+                    <p>Misture o crochê com louças lisas e toalhas de linho para o desenho do ponto aparecer.</p>
+                </article>
+                <article>
+                    <div class="foto"><img src="img/3.jpg" alt="" loading="lazy"></div>
+                    <small>Cuidados</small>
+                    <h3>Fio felpudo: como cuidar do centro macio</h3>
+                    <p>O fio felpudo deixa o centro do tapete macio e quentinho, ideal para o banheiro. Ele pede um pouco mais de cuidado do que o algodão liso.</p>
+                    <p>Sacuda a peça depois de seca e penteie de leve com as mãos para levantar os fios. Lave sempre em ciclo delicado e evite a secadora.</p>
+                </article>
+                <article>
+                    <div class="foto"><img src="img/12.jpg" alt="" loading="lazy"></div>
+                    <small>Cuidados</small>
+                    <h3>Como secar e guardar suas peças</h3>
+                    <p>Seque as peças esticadas, à sombra e sobre uma superfície plana, para manter o formato. O sol forte pode desbotar as cores.</p>
+                    <p>Guarde em local seco e arejado, dobrando sem apertar. Tapetes no chão duram mais com uma base antiderrapante por baixo.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Sobre -->
+        <section id="sobre" class="bloco sobre">
+            <div class="foto"><img src="img/9.jpg" alt="Tapetes em crochê" loading="lazy"></div>
+            <div>
+                <h2>Nossa história</h2>
+                <p>Ateliê especializado em peças artesanais de crochê, feitas à mão sob encomenda para decoração afetiva.</p>
+                <ul>
+                    <li><b>Essência artesanal:</b> peças exclusivas, tecidas ponto a ponto com barbante 100% algodão.</li>
+                    <li><b>Personalização:</b> medidas e paletas de cores adaptadas ao seu ambiente.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 5. Chamada final para o WhatsApp -->
+        <section id="contato" class="chamada">
+            <h2>Vamos criar a sua peça?</h2>
+            <p>Conte as cores e as medidas que você precisa e receba o valor pelo WhatsApp.</p>
+            <a class="btn" data-wa href="#" target="_blank" rel="noopener">Fazer uma encomenda</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>LidiCrochê, 2026. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+/* ===== Design tokens: paleta orgânica centralizada no :root ===== */
+:root {
+    --fundo: #fdfdfb;
+    --suave: #f3f2ee;
+    --texto: #2b2b2b;
+    --cinza: #6f6f6a;
+    --linha: #d9d8d2;
+    --accent: #8b5a3c;
+    --escuro: #333;
+}
+
+/* Modo escuro nativo: segue a preferência do aparelho */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fundo: #1d1c1a;
+        --suave: #262522;
+        --texto: #ece9e3;
+        --cinza: #a09d95;
+        --linha: #3d3b37;
+        --accent: #c58b66;
+        --escuro: #0f0f0e;
+    }
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+    margin: 0;
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background: var(--fundo);
+    color: var(--texto);
+    font: 15px/1.6 system-ui, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Títulos com serifa, texto sem serifa */
+h1, h2, h3 { font-family: Georgia, serif; font-weight: 400; margin: 0 0 12px; }
+h1 { font-size: 44px; line-height: 1.2; }
+h2 { font-size: 32px; }
+h3 { font-size: 18px; margin-top: 4px; }
+small { display: block; margin-top: 14px; color: var(--accent); }
+.btn { display: inline-block; border: 1px solid; padding: 10px 20px; margin: 8px 8px 0 0; }
+
+/* ===== Cabeçalho fixo ===== */
+.hd {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: calc(14px + env(safe-area-inset-top)) 32px 14px;
+    background: var(--fundo); border-bottom: 1px solid var(--texto);
+}
+.logo { font-size: 24px; font-weight: 800; letter-spacing: .06em; }
+.nav { display: flex; gap: 24px; align-items: center; }
+.nav .btn { margin: 0; }
+
+/* ===== Banner ===== */
+.hero { position: relative; height: 80vh; min-height: 420px; color: #fff; }
+.hero img { filter: brightness(.55); }
+.hero div { position: absolute; left: 60px; top: 50%; transform: translateY(-50%); max-width: 520px; }
+
+/* ===== Seções ===== */
+.bloco { max-width: 1200px; margin: 0 auto; padding: 70px 32px; }
+
+/* Catálogo */
+.filtros { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0; }
+.filtros button, input { padding: 8px 16px; border: 1px solid var(--linha); background: none; color: inherit; font: inherit; }
+.filtros .on { border-color: var(--texto); }
+input { margin-left: auto; }
+.grade { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* Cartões: proporção 4/5 e zoom suave nas fotos */
+.card { text-align: center; }
+.card h3 { font: 600 14px Georgia, serif; margin: 14px 0 4px; }
+.card p { margin: 0; color: var(--cinza); }
+.card span { display: inline-block; margin-top: 10px; text-decoration: underline; text-underline-offset: 4px; }
+.foto { aspect-ratio: 4 / 5; overflow: hidden; background: var(--suave); }
+.foto img { transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.card:hover img, .posts article:hover img { transform: scale(1.06); }
+
+/* Diário: 2 colunas */
+.posts { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px; }
+.posts .foto { aspect-ratio: 16 / 9; }
+
+/* Sobre */
+.sobre { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.sobre li { margin-bottom: 10px; }
+
+/* Chamada final */
+.chamada { background: var(--suave); text-align: center; padding: 70px 32px; }
+
+footer { background: var(--escuro); color: #fff; text-align: center; padding: 24px; font-size: 13px; }
+footer p { margin: 0; }
+
+/* ===== Celular e tablet ===== */
+@media (max-width: 900px) {
+    .hd { padding: calc(12px + env(safe-area-inset-top)) 16px 12px; }
+    .nav { gap: 14px; }
+    h1 { font-size: 34px; }
+    .hero div { left: 20px; right: 20px; }
+    .bloco { padding: 50px 16px; }
+    .grade { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .posts, .sobre { grid-template-columns: 1fr; }
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    html { scroll-behavior: auto; }
+}
